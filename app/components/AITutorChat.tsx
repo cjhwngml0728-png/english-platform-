@@ -14,7 +14,7 @@ export default function AITutorChat() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      content: "Hello! I'm Alex, your AI English tutor. I'm here to help you improve your English through conversation. What would you like to talk about today? Feel free to ask me questions about grammar, vocabulary, or just have a casual conversation!",
+      content: "안녕하세요! 저는 Alex, 여러분의 AI 영어 튜터입니다. 대화를 통해 영어 실력을 향상시킬 수 있도록 도와드릴게요. 오늘은 무엇에 대해 이야기하고 싶으신가요? 문법, 단어, 또는 일상 대화에 대해 질문하셔도 좋아요!",
       role: 'assistant',
       timestamp: new Date()
     }
@@ -92,11 +92,11 @@ export default function AITutorChat() {
   }
 
   const suggestedTopics = [
-    "Tell me about your hobbies",
-    "Help me with grammar",
-    "What's the weather like?",
-    "Explain this word: 'serendipity'",
-    "Practice job interview questions"
+    "취미에 대해 영어로 말하고 싶어요",
+    "문법을 도와주세요",
+    "날씨에 관한 영어 표현을 배우고 싶어요",
+    "여행 관련 영어를 가르쳐주세요",
+    "면접 질문 연습을 하고 싶어요"
   ]
 
   const handleSuggestedTopic = (topic: string) => {
@@ -118,8 +118,8 @@ export default function AITutorChat() {
   return (
     <div className="flex flex-col h-[600px]">
       <div className="text-center mb-6">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">🤖 AI English Tutor</h2>
-        <p className="text-gray-600">Chat with Alex, your personal AI English tutor</p>
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">🤖 AI 영어 튜터</h2>
+        <p className="text-gray-600">Alex와 함께 영어를 배워보세요</p>
       </div>
 
       {/* Chat Messages */}
