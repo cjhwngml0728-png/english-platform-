@@ -3,6 +3,17 @@ import anthropic from '@/lib/anthropic'
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if API key is configured
+    if (!process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY === 'placeholder-key') {
+      return NextResponse.json(
+        { 
+          success: false, 
+          error: 'AI tutor is not configured. Please add ANTHROPIC_API_KEY to environment variables.' 
+        },
+        { status: 503 }
+      )
+    }
+
     const { message, conversationHistory } = await request.json()
 
     // English tutor system prompt
