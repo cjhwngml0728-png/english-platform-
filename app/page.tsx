@@ -5,9 +5,10 @@ import StudyDashboard from './components/StudyDashboard'
 import ChatArea from './components/ChatArea'
 import VocabularyLearning from './components/VocabularyLearning'
 import AITutorChat from './components/AITutorChat'
+import MyPage from './components/MyPage'
 
 export default function Home() {
-  const [currentView, setCurrentView] = useState<'dashboard' | 'chat' | 'vocabulary' | 'ai-tutor'>('dashboard')
+  const [currentView, setCurrentView] = useState<'dashboard' | 'chat' | 'vocabulary' | 'ai-tutor' | 'mypage'>('dashboard')
   // Disable authentication - allow access without login
   const user = { email: 'guest@example.com' } // Mock user for demo
   const loading = false
@@ -34,7 +35,7 @@ export default function Home() {
                       : 'text-gray-700 hover:text-primary-600'
                   }`}
                 >
-                  📚 Study Dashboard
+                  📚 Dashboard
                 </button>
                 <button
                   onClick={() => setCurrentView('vocabulary')}
@@ -64,7 +65,17 @@ export default function Home() {
                       : 'text-gray-700 hover:text-primary-600'
                   }`}
                 >
-                  💬 Chat Practice
+                  💬 Chat
+                </button>
+                <button
+                  onClick={() => setCurrentView('mypage')}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    currentView === 'mypage'
+                      ? 'bg-primary-500 text-white'
+                      : 'text-gray-700 hover:text-primary-600'
+                  }`}
+                >
+                  👤 My Page
                 </button>
               </nav>
             </div>
@@ -81,6 +92,8 @@ export default function Home() {
             <VocabularyLearning />
           ) : currentView === 'ai-tutor' ? (
             <AITutorChat />
+          ) : currentView === 'mypage' ? (
+            <MyPage />
           ) : (
             <ChatArea />
           )}

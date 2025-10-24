@@ -4,19 +4,19 @@ import { useState } from 'react'
 
 export default function StudyDashboard() {
   const [studyStats] = useState({
-    totalLessons: 24,
-    completedLessons: 8,
-    streak: 5,
-    totalTime: 12.5
+    totalLessons: 12,
+    completedLessons: 3,
+    streak: 2,
+    totalTime: 4.5
   })
 
   const lessons = [
     { id: 1, title: 'Basic Greetings', progress: 100, difficulty: 'Beginner' },
-    { id: 2, title: 'Daily Conversations', progress: 80, difficulty: 'Beginner' },
-    { id: 3, title: 'Shopping Vocabulary', progress: 60, difficulty: 'Intermediate' },
-    { id: 4, title: 'Travel Phrases', progress: 40, difficulty: 'Intermediate' },
-    { id: 5, title: 'Business English', progress: 20, difficulty: 'Advanced' },
-    { id: 6, title: 'Academic Writing', progress: 0, difficulty: 'Advanced' },
+    { id: 2, title: 'Common Words', progress: 75, difficulty: 'Beginner' },
+    { id: 3, title: 'Family Members', progress: 50, difficulty: 'Beginner' },
+    { id: 4, title: 'Food & Drinks', progress: 25, difficulty: 'Beginner' },
+    { id: 5, title: 'Colors & Numbers', progress: 0, difficulty: 'Beginner' },
+    { id: 6, title: 'Daily Activities', progress: 0, difficulty: 'Beginner' },
   ]
 
   return (
